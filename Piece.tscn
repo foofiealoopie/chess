@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/ChessPieces.png" type="Texture" id=1]
+[ext_resource path="res://PieceScript.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Piece" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 6
+vframes = 2
+frame = 4
+region_rect = Rect2( 22, 22, 160, 160 )
+script = ExtResource( 2 )
+
+[node name="piece_taker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece_taker"]
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="piece_taker" to="." method="_on_piece_taker_area_entered"]

@@ -1,0 +1,34 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+}
+
+[application]
+
+config/name="ChessGame"
+run/main_scene="res://MainBoard.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=880
+
+[layer_names]
+
+2d_physics/layer_1="WHITEPIECES"
+2d_physics/layer_2="BLACKPIECES"
+2d_physics/layer_3="KING"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
